@@ -1,8 +1,9 @@
 .hamburger:hover > div:nth-child(1){
   background-color: ghostwhite;
   animation-name: top;
-  animation-duration: 1s;
+  animation-duration: var(--animation-time);
   animation-fill-mode: forwards;
+  will-change: transform;
 }
 
 .hamburger:hover > div:nth-child(2){
@@ -14,8 +15,9 @@
 .hamburger:hover > div:nth-child(3){
   background-color: ghostwhite;
   animation-name: bottom;
-  animation-duration: 1s;
+  animation-duration: var(--animation-time);
   animation-fill-mode: forwards;
+  will-change:transform;
 }
 
 nav {
@@ -28,8 +30,11 @@ nav {
 }
 
 @keyframes top {
-  from {}
-  to {}
+  from {
+    transform: matrix(1,0,0,1,0,0);
+  }
+  to {transform: matrix(1,0.89,-0.89,1,0,33);
+  }
 }
 
 @keyframes middle {
